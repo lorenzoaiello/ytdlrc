@@ -107,7 +107,7 @@ rclone_config="${HOME}/.config/rclone/rclone.conf"
 rclone_command="move"
 
 # Where to store downloaded files on the rclone remote
-rclone_destination="box:/10-19 Media/16 Internet/16.01 YouTube"
+rclone_destination="rmt:/10-19 Media/16 Internet/16.01 YouTube"
 
 # Rclone flags
 #     * Add any additional rclone flags here, e.g.: "--syslog --bwlimit 5M"
