@@ -1,4 +1,4 @@
-FROM qmcgaw/youtube-dl-alpine
+FROM laiello/youtube-dl-docker:latest
 
 ENV HOME=/mnt/pvc
 
