@@ -1,8 +1,14 @@
 FROM qmcgaw/youtube-dl-alpine
 
 ENV HOME=/mnt/pvc
+ENV GOPATH /go
 
-RUN curl https://rclone.org/install.sh | sudo bash
+RUN apk add --update go git musl-dev ca-certificates \
+	&& go get github.com/ncw/rclone \
+	&& cp /go/bin/rclone /usr/bin \
+	&& rm -rf /go \
+	&& apk del go git musl-dev \
+	&& rm -rf /tmp/* /var/cache/apk/*
 
 COPY ./ytdlrc /usr/local/bin/ytdlrc
 
